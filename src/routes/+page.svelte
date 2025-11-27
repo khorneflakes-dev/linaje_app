@@ -87,10 +87,37 @@
         return n;
       });
 
-      // Save to localStorage
-      saveGraphData(updatedNodes, $edges);
+      // Recalculate layout with only visible nodes
+      let $currentEdges: Edge[] = [];
+      edges.subscribe(e => $currentEdges = e)();
       
-      return updatedNodes;
+      const visibleNodes = updatedNodes.filter(n => !n.hidden);
+      const visibleEdges = $currentEdges.filter(e => {
+        const sourceVisible = visibleNodes.some(n => n.id === e.source);
+        const targetVisible = visibleNodes.some(n => n.id === e.target);
+        return sourceVisible && targetVisible;
+      });
+      
+      const { nodes: layoutedNodes } = getLayoutedElements(visibleNodes, visibleEdges);
+      
+      // Merge layouted positions back into all nodes
+      const finalNodes = updatedNodes.map(n => {
+        const layoutedNode = layoutedNodes.find(ln => ln.id === n.id);
+        if (layoutedNode) {
+          return {
+            ...n,
+            position: layoutedNode.position,
+            sourcePosition: layoutedNode.sourcePosition,
+            targetPosition: layoutedNode.targetPosition
+          };
+        }
+        return n;
+      });
+
+      // Save to localStorage
+      saveGraphData(finalNodes, $currentEdges);
+      
+      return finalNodes;
     });
   }
 
@@ -110,12 +137,13 @@
         type: 'diamond',
         data: { 
             label: item.name || 'Unknown', 
-            expanded: true,
+            expanded: false,
             hasChildren: item.children && item.children.length > 0,
             childrenCount: item.children ? item.children.length : 0,
             onToggle: () => onNodeToggle(id)
         },
-        position: { x: 0, y: 0 } // Layout will fix this
+        position: { x: 0, y: 0 }, // Layout will fix this
+        hidden: parentId !== null // Hide all non-root nodes initially
       };
       
       newNodes.push(node);
@@ -141,12 +169,35 @@
       traverse(data);
     }
 
-    const layout = getLayoutedElements(newNodes, newEdges);
-    nodes.set(layout.nodes);
-    edges.set(layout.edges);
+    // Calculate layout only with visible nodes (hidden nodes are children of collapsed parents)
+    const visibleNodes = newNodes.filter(n => !n.hidden);
+    const visibleEdges = newEdges.filter(e => {
+      const sourceVisible = visibleNodes.some(n => n.id === e.source);
+      const targetVisible = visibleNodes.some(n => n.id === e.target);
+      return sourceVisible && targetVisible;
+    });
+    
+    const { nodes: layoutedVisibleNodes } = getLayoutedElements(visibleNodes, visibleEdges);
+    
+    // Merge positions back to all nodes
+    const allNodesWithPositions = newNodes.map(n => {
+      const layoutedNode = layoutedVisibleNodes.find(ln => ln.id === n.id);
+      if (layoutedNode) {
+        return {
+          ...n,
+          position: layoutedNode.position,
+          sourcePosition: layoutedNode.sourcePosition,
+          targetPosition: layoutedNode.targetPosition
+        };
+      }
+      return n;
+    });
+    
+    nodes.set(allNodesWithPositions);
+    edges.set(newEdges);
     
     // Save to localStorage
-    saveGraphData(layout.nodes, layout.edges);
+    saveGraphData(allNodesWithPositions, newEdges);
   }
 
   function saveGraphData(nodeData: Node[], edgeData: Edge[]) {

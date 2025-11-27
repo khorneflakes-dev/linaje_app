@@ -9,10 +9,18 @@ export const getLayoutedElements = (nodes: Node[], edges: Edge[], direction = 'L
     dagreGraph.setDefaultEdgeLabel(() => ({}));
 
     const isHorizontal = direction === 'LR';
-    dagreGraph.setGraph({ rankdir: direction });
+    dagreGraph.setGraph({
+        rankdir: direction,
+        ranksep: 250, // Significantly more spacing between ranks to accommodate long labels
+        nodesep: 20   // Increase spacing between nodes in same rank
+    });
 
     nodes.forEach((node) => {
-        dagreGraph.setNode(node.id, { width: nodeWidth, height: nodeHeight });
+        // Use uniform width for all nodes to ensure proper alignment
+        const uniformWidth = 280;
+        const nodeHeight = 60;
+
+        dagreGraph.setNode(node.id, { width: uniformWidth, height: nodeHeight });
     });
 
     edges.forEach((edge) => {
@@ -23,13 +31,14 @@ export const getLayoutedElements = (nodes: Node[], edges: Edge[], direction = 'L
 
     const layoutedNodes = nodes.map((node) => {
         const nodeWithPosition = dagreGraph.node(node.id);
+        const nodeData = dagreGraph.node(node.id);
         return {
             ...node,
             targetPosition: isHorizontal ? Position.Left : Position.Top,
             sourcePosition: isHorizontal ? Position.Right : Position.Bottom,
             position: {
-                x: nodeWithPosition.x - nodeWidth / 2,
-                y: nodeWithPosition.y - nodeHeight / 2,
+                x: nodeWithPosition.x - nodeData.width / 2,
+                y: nodeWithPosition.y - nodeData.height / 2,
             },
         };
     });

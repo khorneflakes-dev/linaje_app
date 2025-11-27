@@ -1,0 +1,765 @@
+[
+  {
+    "name": "famous_dim_vendors_comms",
+    "children": [
+      {
+        "name": "FC_NAME"
+      },
+      {
+        "name": "FC_NAME_CATEGORY"
+      },
+      {
+        "name": "FC_NAME_COMM"
+      },
+      {
+        "name": "FC_NAME_LOCATION"
+      {
+        "name": "FC_NAME_NAME_GROUP_XREF"
+      },
+      {
+        "name": "FC_REPORT_GROUP"
+      }
+    ]
+  },
+  {
+    "name": "famous_report_tag_activity",
+    "children": [
+      {
+        "name": "famous_dim_lots",
+        "children": [
+          {
+            "name": "GA_LOT"
+          }
+        ]
+      },
+      {
+        "name": "famous_dim_products",
+        "children": [
+          {
+            "name": "FC_UNIT_OF_MEASURE"
+          },
+          {
+            "name": "GA_LOT"
+          },
+          {
+            "name": "GA_POOL"
+          },
+          {
+            "name": "IC_INVENTORY"
+          },
+          {
+            "name": "IC_PRODUCT_GROUP"
+          },
+          {
+            "name": "IC_PRODUCT_ID"
+          },
+          {
+            "name": "IC_PRODUCT_PRODUCE"
+          },
+          {
+            "name": "IC_PS_COMMODITY"
+          },
+          {
+            "name": "IC_PS_GRADE"
+          },
+          {
+            "name": "IC_PS_LABEL"
+          },
+          {
+            "name": "IC_PS_METHOD"
+          },
+          {
+            "name": "IC_PS_QUALITY"
+          },
+          {
+            "name": "IC_PS_REGION"
+          },
+          {
+            "name": "IC_PS_SIZE"
+          },
+          {
+            "name": "IC_PS_STORAGE"
+          },
+          {
+            "name": "IC_PS_STYLE"
+          },
+          {
+            "name": "IC_PS_VARIETY"
+          },
+          {
+            "name": "IC_PS_VARIETY_GROUP"
+          },
+          {
+            "name": "IC_TAG"
+          },
+          {
+            "name": "IC_TRX_DETAIL"
+          },
+          {
+            "name": "IC_TRX_HEADER"
+          },
+          {
+            "name": "IC_TRX_LINE"
+          },
+          {
+            "name": "IC_TRX_PRODUCT"
+          }
+        ]
+      },
+      {
+        "name": "famous_dim_tags",
+        "children": [
+          {
+            "name": "FC_NAME"
+          },
+          {
+            "name": "GA_BLOCK"
+          },
+          {
+            "name": "IC_INVENTORY"
+          },
+          {
+            "name": "IC_TAG"
+          }
+        ]
+      },
+      {
+        "name": "famous_dim_warehouses",
+        "children": [
+          {
+            "name": "FC_NAME_LOCATION"
+          },
+          {
+            "name": "IC_WAREHOUSE"
+          }
+        ]
+      },
+      {
+        "name": "GA_BLOCK"
+      },
+      {
+        "name": "IC_TAG_INQUIRY_VIEW"
+      }
+    ]
+  },
+  {
+    "name": "CUSTOM_INTERCO_VOUCHERXML_VIEW",
+    "children": [
+      {
+        "name": "FW_ACCESS_GROUP"
+      },
+      {
+        "name": "AR_PAY_TERMS"
+      },
+      {
+        "name": "AR_TRX_HEADER"
+      },
+      {
+        "name": "CT_RUN_DETAIL"
+      },
+      {
+        "name": "CT_RUN_HEADER"
+      },
+      {
+        "name": "CUSTOM_INTERCO_DETAIL"
+      }
+    ]
+  },
+  {
+    "name": "famous_report_sales",
+    "children": [
+      {
+        "name": "famous_dim_lots",
+        "children": [
+          {
+            "name": "GA_LOT"
+          }
+        ]
+      },
+      {
+        "name": "famous_dim_products",
+        "children": [
+          {
+            "name": "FC_UNIT_OF_MEASURE"
+          },
+          {
+            "name": "GA_LOT"
+          },
+          {
+            "name": "GA_POOL"
+          },
+          {
+            "name": "IC_INVENTORY"
+          },
+          {
+            "name": "IC_PRODUCT_GROUP"
+          },
+          {
+            "name": "IC_PRODUCT_ID"
+          },
+          {
+            "name": "IC_PRODUCT_PRODUCE"
+          },
+          {
+            "name": "IC_PS_COMMODITY"
+          },
+          {
+            "name": "IC_PS_GRADE"
+          },
+          {
+            "name": "IC_PS_LABEL"
+          },
+          {
+            "name": "IC_PS_METHOD"
+          },
+          {
+            "name": "IC_PS_QUALITY"
+          },
+          {
+            "name": "IC_PS_REGION"
+          },
+          {
+            "name": "IC_PS_SIZE"
+          },
+          {
+            "name": "IC_PS_STORAGE"
+          },
+          {
+            "name": "IC_PS_STYLE"
+          },
+          {
+            "name": "IC_PS_VARIETY"
+          },
+          {
+            "name": "IC_PS_VARIETY_GROUP"
+          },
+          {
+            "name": "IC_TAG"
+          },
+          {
+            "name": "IC_TRX_DETAIL"
+          },
+          {
+            "name": "IC_TRX_HEADER"
+          },
+          {
+            "name": "IC_TRX_LINE"
+          },
+          {
+            "name": "IC_TRX_PRODUCT"
+          }
+        ]
+      },
+      {
+        "name": "famous_fact_sales_tag",
+        "children": [
+          {
+            "name": "IC_WAREHOUSE"
+          },
+          {
+            "name": "AR_TRX_DETAIL"
+          },
+          {
+            "name": "AR_TRX_HEADER"
+          },
+          {
+            "name": "AR_TRX_LINE"
+          },
+          {
+            "name": "AR_TRX_PRODUCT"
+          },
+          {
+            "name": "FC_NAME"
+          },
+          {
+            "name": "FC_NAME_LOCATION"
+          },
+          {
+            "name": "GA_BLOCK"
+          },
+          {
+            "name": "GA_LOT"
+          },
+          {
+            "name": "IC_INVENTORY"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "famous_fact_repacking_costs_tag",
+    "children": [
+      {
+        "name": "IC_INVENTORY"
+      },
+      {
+        "name": "IC_REPACKING_VIEW"
+      }
+    ]
+  },
+  {
+    "name": "famous_fact_inventory_activity_tag",
+    "children": [
+      {
+        "name": "IC_TAG_INQUIRY_VIEW"
+      }
+    ]
+  },
+  {
+    "name": "famous_report_sales_detailed",
+    "children": [
+      {
+        "name": "famous_dim_lots",
+        "children": [
+          {
+            "name": "GA_LOT"
+          }
+        ]
+      },
+      {
+        "name": "famous_dim_products",
+        "children": [
+          {
+            "name": "FC_UNIT_OF_MEASURE"
+          },
+          {
+            "name": "GA_LOT"
+          },
+          {
+            "name": "GA_POOL"
+          },
+          {
+            "name": "IC_INVENTORY"
+          },
+          {
+            "name": "IC_PRODUCT_GROUP"
+          },
+          {
+            "name": "IC_PRODUCT_ID"
+          },
+          {
+            "name": "IC_PRODUCT_PRODUCE"
+          },
+          {
+            "name": "IC_PS_COMMODITY"
+          },
+          {
+            "name": "IC_PS_GRADE"
+          },
+          {
+            "name": "IC_PS_LABEL"
+          },
+          {
+            "name": "IC_PS_METHOD"
+          },
+          {
+            "name": "IC_PS_QUALITY"
+          },
+          {
+            "name": "IC_PS_REGION"
+          },
+          {
+            "name": "IC_PS_SIZE"
+          },
+          {
+            "name": "IC_PS_STORAGE"
+          },
+          {
+            "name": "IC_PS_STYLE"
+          },
+          {
+            "name": "IC_PS_VARIETY"
+          },
+          {
+            "name": "IC_PS_VARIETY_GROUP"
+          },
+          {
+            "name": "IC_TAG"
+          },
+          {
+            "name": "IC_TRX_DETAIL"
+          },
+          {
+            "name": "IC_TRX_HEADER"
+          },
+          {
+            "name": "IC_TRX_LINE"
+          },
+          {
+            "name": "IC_TRX_PRODUCT"
+          }
+        ]
+      },
+      {
+        "name": "famous_dim_tags",
+        "children": [
+          {
+            "name": "FC_NAME"
+          },
+          {
+            "name": "GA_BLOCK"
+          },
+          {
+            "name": "IC_INVENTORY"
+          },
+          {
+            "name": "IC_TAG"
+          }
+        ]
+      },
+      {
+        "name": "famous_fact_sales_tag",
+        "children": [
+          {
+            "name": "IC_WAREHOUSE"
+          },
+          {
+            "name": "AR_TRX_DETAIL"
+          },
+          {
+            "name": "AR_TRX_HEADER"
+          },
+          {
+            "name": "AR_TRX_LINE"
+          },
+          {
+            "name": "AR_TRX_PRODUCT"
+          },
+          {
+            "name": "FC_NAME"
+          },
+          {
+            "name": "FC_NAME_LOCATION"
+          },
+          {
+            "name": "GA_BLOCK"
+          },
+          {
+            "name": "GA_LOT"
+          },
+          {
+            "name": "IC_INVENTORY"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "famous_fact_freight_costs_tag",
+    "children": [
+      {
+        "name": "FW_USER_VIEW"
+      },
+      {
+        "name": "famous_fact_sales_tag",
+        "children": [
+          {
+            "name": "IC_WAREHOUSE"
+          },
+          {
+            "name": "AR_TRX_DETAIL"
+          },
+          {
+            "name": "AR_TRX_HEADER"
+          },
+          {
+            "name": "AR_TRX_LINE"
+          },
+          {
+            "name": "AR_TRX_PRODUCT"
+          },
+          {
+            "name": "FC_NAME"
+          },
+          {
+            "name": "FC_NAME_LOCATION"
+          },
+          {
+            "name": "GA_BLOCK"
+          },
+          {
+            "name": "GA_LOT"
+          },
+          {
+            "name": "IC_INVENTORY"
+          }
+        ]
+      },
+      {
+        "name": "AP_VOUCHER_HEADER"
+      },
+      {
+        "name": "AP_VOUCHER_TRX"
+      },
+      {
+        "name": "FC_NAME"
+      },
+      {
+        "name": "GL_TRX"
+      },
+      {
+        "name": "GL_TRX_DEPT_ACCT"
+      },
+      {
+        "name": "GL_TRX_HEADER"
+      }
+    ]
+  },
+  {
+    "name": "famous_report_grower_accounting",
+    "children": [
+      {
+        "name": "famous_dim_lots",
+        "children": [
+          {
+            "name": "GA_LOT"
+          }
+        ]
+      },
+      {
+        "name": "famous_dim_products",
+        "children": [
+          {
+            "name": "FC_UNIT_OF_MEASURE"
+          },
+          {
+            "name": "GA_LOT"
+          },
+          {
+            "name": "GA_POOL"
+          },
+          {
+            "name": "IC_INVENTORY"
+          },
+          {
+            "name": "IC_PRODUCT_GROUP"
+          },
+          {
+            "name": "IC_PRODUCT_ID"
+          },
+          {
+            "name": "IC_PRODUCT_PRODUCE"
+          },
+          {
+            "name": "IC_PS_COMMODITY"
+          },
+          {
+            "name": "IC_PS_GRADE"
+          },
+          {
+            "name": "IC_PS_LABEL"
+          },
+          {
+            "name": "IC_PS_METHOD"
+          },
+          {
+            "name": "IC_PS_QUALITY"
+          },
+          {
+            "name": "IC_PS_REGION"
+          },
+          {
+            "name": "IC_PS_SIZE"
+          },
+          {
+            "name": "IC_PS_STORAGE"
+          },
+          {
+            "name": "IC_PS_STYLE"
+          },
+          {
+            "name": "IC_PS_VARIETY"
+          },
+          {
+            "name": "IC_PS_VARIETY_GROUP"
+          },
+          {
+            "name": "IC_TAG"
+          },
+          {
+            "name": "IC_TRX_DETAIL"
+          },
+          {
+            "name": "IC_TRX_HEADER"
+          },
+          {
+            "name": "IC_TRX_LINE"
+          },
+          {
+            "name": "IC_TRX_PRODUCT"
+          }
+        ]
+      },
+      {
+        "name": "famous_fact_grower_accounting_lot",
+        "children": [
+          {
+            "name": "VW_IC_RPT_LOT_STATUS",
+            "children": [
+              {
+                "name": "DP"
+              },
+              {
+                "name": "ICTRX"
+              },
+              {
+                "name": "IC_PRODUCT_PRODUCE"
+              },
+              {
+                "name": "IC_PS_SIZE"
+              },
+              {
+                "name": "IC_RUN"
+              },
+              {
+                "name": "IC_TAG"
+              },
+              {
+                "name": "IC_TRX_CHARGE"
+              },
+              {
+                "name": "IC_TRX_DETAIL"
+              },
+              {
+                "name": "IC_TRX_HEADER"
+              },
+              {
+                "name": "IC_TRX_ISSUE_HEADER"
+              },
+              {
+                "name": "IC_TRX_LINE"
+              },
+              {
+                "name": "IC_TRX_PRODUCT"
+              },
+              {
+                "name": "AR_SO_DETAIL"
+              },
+              {
+                "name": "AR_SO_LINE"
+              },
+              {
+                "name": "AR_SO_PRODUCT"
+              },
+              {
+                "name": "AR_TRX_CHARGE"
+              },
+              {
+                "name": "AR_TRX_DETAIL"
+              },
+              {
+                "name": "AR_TRX_HEADER"
+              },
+              {
+                "name": "AR_TRX_LINE"
+              },
+              {
+                "name": "AR_TRX_PRODUCT"
+              },
+              {
+                "name": "CT_RUN_DETAIL"
+              },
+              {
+                "name": "CT_RUN_HEADER"
+              },
+              {
+                "name": "FC_CHARGE_CODE"
+              },
+              {
+                "name": "FC_NAME"
+              },
+              {
+                "name": "FC_UNIT_OF_MEASURE"
+              },
+              {
+                "name": "GA_BLOCK"
+              },
+              {
+                "name": "GA_LOT"
+              },
+              {
+                "name": "GA_POOL"
+              },
+              {
+                "name": "GA_SETL_RUN"
+              },
+              {
+                "name": "GA_TRX_AUTO_SETL_CHARGE"
+              },
+              {
+                "name": "IC_INVENTORY"
+              },
+              {
+                "name": "IC_TRX_ISSUE_CHARGE"
+              },
+              {
+                "name": "IC_TRX_ISSUE_DETAIL"
+              },
+              {
+                "name": "IC_TRX_ISSUE_PRODUCT"
+              }
+            ]
+          },
+          {
+            "name": "FC_NAME"
+          },
+          {
+            "name": "GA_BLOCK"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "famous_fact_repacking_tag",
+    "children": [
+      {
+        "name": "IC_REPACKING_VIEW"
+      }
+    ]
+  },
+  {
+    "name": "famous_report_general_ledger",
+    "children": [
+      {
+        "name": "AP_VOUCHER_HEADER"
+      },
+      {
+        "name": "AP_VOUCHER_TRX"
+      },
+      {
+        "name": "CA_PHASE"
+      },
+      {
+        "name": "CA_PHASE_GROUP"
+      },
+      {
+        "name": "FC_NAME"
+      },
+      {
+        "name": "GL_ACCOUNT"
+      },
+      {
+        "name": "GL_ACCOUNT_GROUP"
+      },
+      {
+        "name": "GL_JOURNAL_TRX"
+      },
+      {
+        "name": "GL_TRX_CA"
+      },
+      {
+        "name": "GL_TRANSACTION_VIEW"
+      }
+    ]
+  },
+  {
+    "name": "famous_fact_cooling_time_tag",
+    "children": [
+      {
+        "name": "IC_TAG_INQUIRY_VIEW"
+      }
+    ]
+  }
+]
