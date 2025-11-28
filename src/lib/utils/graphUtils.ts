@@ -56,3 +56,14 @@ export const getHiddenDescendants = (nodeId: string, edges: Edge[]): string[] =>
 
     return descendants;
 };
+
+export const getAncestors = (nodeId: string, edges: Edge[]): string[] => {
+    const parents = edges.filter(e => e.target === nodeId).map(e => e.source);
+    let ancestors = [...parents];
+
+    parents.forEach(parentId => {
+        ancestors = [...ancestors, ...getAncestors(parentId, edges)];
+    });
+
+    return ancestors;
+};

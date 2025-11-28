@@ -1,13 +1,22 @@
-import adapter from '@sveltejs/adapter-auto';
+// svelte.config.js
+
+import adapter from '@sveltejs/adapter-static';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-	kit: {
-		// adapter-auto only supports some environments, see https://svelte.dev/docs/kit/adapter-auto for a list.
-		// If your environment is not supported, or you settled on a specific environment, switch out the adapter.
-		// See https://svelte.dev/docs/kit/adapters for more information about adapters.
-		adapter: adapter()
-	}
+    kit: {
+        // ... otras configuraciones
+        adapter: adapter({
+            // fallback: '404.html' // Opcional: para enrutamiento en el lado del cliente (SPA)
+			fallback: '404.html'
+        }),
+        paths: {
+            // Reemplaza 'nombre-de-tu-repositorio' con el nombre real.
+            // Si es un sitio de usuario/organización, usa ''
+            base: process.argv.includes('dev') ? '' : '/linaje_app',
+            relative: false
+        }
+    }
 };
 
 export default config;

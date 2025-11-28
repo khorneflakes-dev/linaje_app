@@ -1,7 +1,7 @@
 <script lang="ts">
   import { Handle, Position, type NodeProps, type Node, useSvelteFlow } from '@xyflow/svelte';
 
-  type NodeData = { label: string; expanded?: boolean; hasChildren?: boolean; childrenCount?: number; onToggle?: () => void };
+  type NodeData = { label: string; expanded?: boolean; hasChildren?: boolean; childrenCount?: number; onToggle?: () => void; highlighted?: boolean };
   type $$Props = NodeProps<Node<NodeData>>;
 
   export let data: NodeData;
@@ -20,7 +20,7 @@
   }
 </script>
 
-<div class="relative inline-flex items-center rounded-lg border border-gray-300 bg-white pl-4 pr-3 py-2 text-gray-900 shadow-md max-w-xs dark:border-gray-600 dark:bg-gray-900 dark:text-white">
+<div class="relative inline-flex items-center rounded-lg border {data.highlighted ? 'border-blue-500 bg-blue-50 dark:border-blue-400 dark:bg-blue-900/30' : 'border-gray-300 bg-white dark:border-gray-600 dark:bg-gray-900'} pl-4 pr-3 py-2 text-gray-900 shadow-md max-w-xs dark:text-white transition-colors duration-200">
   <!-- Input Handle -->
   <Handle type="target" position={Position.Left} {isConnectable} class="!bg-gray-400" />
 
